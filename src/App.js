@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import FileUpload from "./FileUpload";
 import "./App.css";
-// eslint-disable-next-line no-unused-vars
+
 const BACKEND_URL = "https://backend-xia8.onrender.com";
+
+
 
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
         <h1>Social Media Content Analyzer</h1>
         <p>Analyze your social media posts for better engagement!</p>
       </header>
-      <FileUpload onTextExtracted={handleTextExtracted} />
+      <FileUpload onTextExtracted={handleTextExtracted}backendUrl={BACKEND_URL} />
       {extractedText && (
         <div className="text-extraction-result">
           <h2>Extracted Text</h2>
