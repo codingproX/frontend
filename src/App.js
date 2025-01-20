@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import FileUpload from "./FileUpload";
 import "./App.css";
+// eslint-disable-next-line no-unused-vars
 const BACKEND_URL = "https://backend-xia8.onrender.com";
+
 
 function App() {
   const [extractedText, setExtractedText] = useState("");

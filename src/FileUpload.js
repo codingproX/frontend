@@ -1,12 +1,20 @@
+
 import React, { useState } from "react";
 
-const FileUpload = ({ onTextExtracted }) => {
+const FileUpload = ({ onTextExtracted, backendUrl }) => {
   const [file, setFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState("");
 
+  const allowedFileTypes = ["application/pdf", "image/png", "image/jpeg"];
+
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    const selectedFile = event.target.files[0];
+    if (!allowedFileTypes.includes(selectedFile.type)) {
+      setError("Invalid file type. Please upload a PDF or image file.");
+      return;
+    }
+    setFile(selectedFile);
     setError(""); // Clear any previous error messages
   };
 
@@ -23,14 +31,13 @@ const FileUpload = ({ onTextExtracted }) => {
     setError(""); // Reset error before starting the upload
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/upload", {
+      const response = await fetch(`${backendUrl}/upload`, {
         method: "POST",
         body: formData,
       });
 
       if (!response.ok) {
-        // eslint-disable-next-line no-template-curly-in-string
-        throw new Error('Upload failed: ${response.statusText}');
+        throw new Error(`Upload failed: ${response.statusText}`);
       }
 
       const data = await response.json();
@@ -47,11 +54,14 @@ const FileUpload = ({ onTextExtracted }) => {
     }
   };
 
-
   return (
     <div className="file-upload">
       <h2>Upload Your File</h2>
-      <input type="file" onChange={handleFileChange} accept=".pdf, .png, .jpg, .jpeg" />
+      <input
+        type="file"
+        onChange={handleFileChange}
+        accept=".pdf, .png, .jpg, .jpeg"
+      />
       {error && <p className="error-message">{error}</p>}
       <button onClick={handleUpload} disabled={!file || isUploading}>
         {isUploading ? "Uploading..." : "Upload"}
