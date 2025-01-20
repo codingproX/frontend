@@ -42,6 +42,12 @@ cd frontend
 
 ### 7.Deployment
       The frontend is deployed on Netlify:
+      ## Deployment
+
+### Backend Deployment
+    Use a cloud platform such as AWS, Heroku, or Render.
+    Ensure all dependencies are installed and environment variables are set.
+    Run the Flask app with a production-ready server like Gunicorn:
 
 ### URL: http://socialmediacontentanalyzer.netlify.app
 
