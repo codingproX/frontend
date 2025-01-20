@@ -1,0 +1,144 @@
+/* Updated Header Styling */
+header {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+header p {
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+
+/* Updated File Upload Styling */
+.file-upload {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  margin: 20px auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.file-upload:hover {
+  transform: translateY(-5px);
+}
+
+.file-upload h2 {
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.file-upload input[type="file"] {
+  padding: 10px;
+  margin: 15px 0;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload input[type="file"]:hover {
+  border-color: #007bff;
+}
+
+.file-upload button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.file-upload button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Progress Bar */
+.upload-progress {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 10px auto;
+  height: 10px;
+}
+
+.upload-progress .progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Updated Result Section */
+.text-extraction-result {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 700px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.text-extraction-result h2 {
+  color: #0056b3;
+}
+
+.text-extraction-result p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #f8f9fa;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+/* Error Message */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
